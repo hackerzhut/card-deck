@@ -1,0 +1,20 @@
+#!/usr/bin/env node
+var Deck  	= require("./deck")
+var argv 	= require('optimist')
+    	.usage('Shuffling a deck of cards.\nUsage: $0')
+    	.demand('n')
+    	.alias('n', 'cards')
+    	.describe('n', 'Number of cards.')
+    	.argv;
+
+var cards = [];
+for(_index = 0; _index < argv.cards; _index++){
+	cards[_index] = _index+1;
+}
+
+var cardDeck 	= new Deck(cards);
+var noOfTries 	= cardDeck.shuffleToOriginal();
+
+console.log("[ Total number of tries: "+noOfTries+" ]");
+
+

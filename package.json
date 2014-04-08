@@ -1,0 +1,15 @@
+{
+  "name": "ShuffleCards",
+  "version": "0.0.1",
+  "description": "Shuffling a deck of cards",
+  "main": "shuffle.js",
+  "scripts": {
+    "test": "./shuffle -n <no of cards>"
+  },
+  "repository": "",
+  "author": "Saravana",
+  "license": "BSD",
+  "dependencies": {
+    "optimist": "~0.6.1"
+  }
+}
