@@ -51,7 +51,7 @@ module.exports = function(deck){
 		return isEqual;
 	};
 
-	this.shuffleToOriginal = function(){
+	this.shuffleToOriginal = function(callback){
 		while(true){
 			while(deck.length > 0){
 				//placing top element on the table
@@ -73,7 +73,7 @@ module.exports = function(deck){
 				break;
 			}
 		};
-		return this._tries;
+		callback(null, this._tries);
 	};
 };
 

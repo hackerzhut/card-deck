@@ -10,6 +10,8 @@
   "author": "Saravana",
   "license": "BSD",
   "dependencies": {
-    "optimist": "~0.6.1"
+    "optimist": "~0.6.1",
+    "mocha": "~1.18.2",
+    "chai": "~1.9.1"
   }
 }

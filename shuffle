@@ -13,8 +13,10 @@ for(_index = 0; _index < argv.cards; _index++){
 }
 
 var cardDeck 	= new Deck(cards);
-var noOfTries 	= cardDeck.shuffleToOriginal();
+cardDeck.shuffleToOriginal(function(err, noOfTries){
+	console.log("[ Total number of tries: "+noOfTries+" ]");
+});
 
-console.log("[ Total number of tries: "+noOfTries+" ]");
+
 
 
