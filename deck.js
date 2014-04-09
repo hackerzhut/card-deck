@@ -3,11 +3,14 @@ module.exports = function(deck){
 	"use strict";
 
 	this._tries = 0,
-	this._originalDeck = JSON.parse(JSON.stringify(deck)),
+	//creates a copy of the original deck
+	this._originalDeck = JSON.parse(JSON.stringify(deck)), 
+	
 	this._deckInHand  = [],
 	this._deckOnTable = [];
 
 
+	//Reverse the array using swap technique
 	Array.prototype.reverse = function(){
 		for(var left=0, right = this.length-1; left < right; left++, right--){
 			var temp = this[right];
@@ -16,6 +19,7 @@ module.exports = function(deck){
 		};
 	};
 
+	//Pop the element out of the array for a given index
 	Array.prototype.pop = function(index){
 		if(index < 0 || index > this.length-1) return;
 		var elem = this[index];
@@ -26,6 +30,7 @@ module.exports = function(deck){
 		this.length = _nIndex;
 	};
 
+	//This function is to depict the scenario, take the top card and place it at the bottom of the deck
 	Array.prototype.popAndPush = function(elementToPopAndPush){
 		var elementIndex = this.indexOf(elementToPopAndPush);
 		if(elementIndex == -1)return;
@@ -35,6 +40,7 @@ module.exports = function(deck){
 		};
 	};
 
+	//This function compares whether two arrays are equal. Doesnot work for nested arrays.
 	Array.prototype.compare = function(arr){
 		var that = this,
 		arrayLength = arr.length;
@@ -51,6 +57,7 @@ module.exports = function(deck){
 		return isEqual;
 	};
 
+	//Publicly exposed method to shuffle the card back to original
 	this.shuffleToOriginal = function(callback){
 		while(true){
 			while(deck.length > 0){
